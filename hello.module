@@ -31,3 +31,19 @@ function hello_block_info() {
   );
   return $blocks;
 }
+
+/**
+ * Implements hook_block_view().
+ */
+function hello_block_view($delta = '') {
+  // This example is adapted from node.module.
+  $block = array();
+
+  switch ($delta) {
+    case 'current_ip':
+      $block['subject'] = t('Your Current IP');
+      $block['content'] = t('Your ip wil be here!');
+      break;
+  }
+  return $block;
+}
