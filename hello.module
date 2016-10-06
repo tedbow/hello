@@ -70,8 +70,13 @@ function hello_block_view($delta = '') {
 function _hello_restrict_form($form, &$form_state) {
   $form['user_name'] = array(
     '#type' => 'textfield',
-    '#title' => t('User to block'),
-    '#description' => t('Enter the username of the user to block.'),
+    '#title' => t('User to Restrict'),
+    '#description' => t('Enter the username of the user to restrict.'),
+  );
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Restrict'),
+    
   );
   return $form;
 }
