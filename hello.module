@@ -42,7 +42,7 @@ function hello_block_view($delta = '') {
   switch ($delta) {
     case 'current_ip':
       $block['subject'] = t('Your Current IP');
-      $block['content'] = t('Your ip wil be here!');
+      $block['content'] = t('Your IP is @ip', array('@ip' => ip_address()));
       break;
   }
   return $block;
