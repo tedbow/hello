@@ -19,3 +19,15 @@ function hello_menu() {
 function hello_page() {
   return "Hello World!";
 }
+
+/*
+ * Implements hook_block_info().
+ */
+function hello_block_info() {
+  // This example comes from node.module.
+  $blocks['current_ip'] = array(
+    'info' => t("Current User's IP"),
+    'cache' => DRUPAL_NO_CACHE,
+  );
+  return $blocks;
+}
