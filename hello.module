@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Implements hook_menu().
+ */
 function hello_menu() {
   $items['hello'] = array(
     'title' => 'Hello Page',
@@ -10,6 +13,9 @@ function hello_menu() {
   return $items;
 }
 
+/**
+ *  Page callback for "Hello" page.
+ */
 function hello_page() {
   return "Hello World!";
 }
