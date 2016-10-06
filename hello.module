@@ -1,6 +1,6 @@
 <?php
 
-function hook_menu() {
+function hello_menu() {
   $items['hello'] = array(
     'title' => 'Hello Page',
     'page callback' => 'hello_page',
