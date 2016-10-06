@@ -13,7 +13,8 @@ function hello_menu() {
 
   $items['admin/people/restrict'] = array(
     'title' => 'Restrict a user',
-    'page callback' => 'hello_page',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('_hello_restrict_form'),
     'access arguments' => array('restrict users'),
     'type' => MENU_LOCAL_TASK,
   );
@@ -64,4 +65,13 @@ function hello_block_view($delta = '') {
       break;
   }
   return $block;
+}
+
+function _hello_restrict_form($form, &$form_state) {
+  $form['user_name'] = array(
+    '#type' => 'textfield',
+    '#title' => t('User to block'),
+    '#description' => t('Enter the username of the user to block.'),
+  );
+  return $form;
 }
