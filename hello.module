@@ -10,6 +10,13 @@ function hello_menu() {
     'access arguments' => array('access content'),
     'type' => MENU_CALLBACK,
   );
+
+  $items['admin/people/restrict'] = array(
+    'title' => 'Restrict a user',
+    'page callback' => 'hello_page',
+    'access arguments' => array('access content'),
+    'type' => MENU_LOCAL_TASK,
+  );
   return $items;
 }
 
