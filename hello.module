@@ -1,1 +1,13 @@
 <?php
+
+function hook_menu() {
+  $items['hello'] = array(
+    'title' => 'Hello Page',
+    'page callback' => 'hello_page',
+    'access arguments' => array('access content'),
+    'type' => MENU_CALLBACK,
+  );
+
+
+  return $items;
+}
