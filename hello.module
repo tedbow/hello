@@ -9,3 +9,7 @@ function hello_menu() {
   );
   return $items;
 }
+
+function hello_page() {
+  return "Hello World!";
+}
