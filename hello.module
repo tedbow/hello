@@ -14,12 +14,23 @@ function hello_menu() {
   $items['admin/people/restrict'] = array(
     'title' => 'Restrict a user',
     'page callback' => 'hello_page',
-    'access arguments' => array('access content'),
+    'access arguments' => array('restrict users'),
     'type' => MENU_LOCAL_TASK,
   );
   return $items;
 }
 
+/**
+ * Implements hook_permission().
+ */
+function hello_permission() {
+  return array(
+    'restrict users' => array(
+      'title' => t('Restrict other users'),
+      'description' => t('Blah blah blah.'),
+    ),
+  );
+}
 /**
  *  Page callback for "Hello" page.
  */
