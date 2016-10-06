@@ -76,7 +76,17 @@ function _hello_restrict_form($form, &$form_state) {
   $form['submit'] = array(
     '#type' => 'submit',
     '#value' => t('Restrict'),
-    
+
   );
   return $form;
+}
+
+
+function _hello_restrict_form_submit($form, &$form_submit) {
+  $user_name = $form_submit['values']['user_name'];
+  $user = user_load_by_name($user_name);
+  // debug($user);
+  user_save($user, array('status' => 0));
+  drupal_set_message('User restricted');
+
 }
